@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AcceptedEmail;
+use App\Mail\RejectedMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
@@ -29,26 +31,34 @@ class EmailController extends Controller
             Email::create($email_desc);
 
             Mail::to($request->to_email)->send(new SendEmail($email_desc));
-            return redirect('/appointment' . '/'.$request->umkmName)->with('status', 'appointment-send');
+            return redirect('/appointment' . '/' . $request->umkmName)->with('status', 'appointment-send');
         } else {
-            return redirect('/appointment' . '/'.$request->umkmName)->with('status', 'appointment-failed');
+            return redirect('/appointment' . '/' . $request->umkmName)->with('status', 'appointment-failed');
         }
-        
-       
     }
 
-    
+
     public function updateEmailAccepted($id)
     {
+        $email = Email::findOrFail($id);
+
         $accepted['status'] = 'accepted';
         Email::where('id', $id)->update($accepted);
-        return redirect('/dashboard/email')->with('succes', 'Email Accepted');
+        Mail::to($email->from_email)->send(new AcceptedEmail());
+
+        return redirect()->back()->with('succes', 'Email Accepted');
     }
 
-    public function updateEmailRejected($id)
+    public function updateEmailRejected(Request $request, $id)
     {
+        $email = Email::findOrFail($id);
+
+        $rejected_reason = $request->reason;
         $rejected['status'] = 'rejected';
         Email::where('id', $id)->update($rejected);
+        dd($rejected_reason);
+        Mail::to($email->from_email)->send(new RejectedMail($rejected_reason));
+
         return redirect('/dashboard/email')->with('danger', 'Email Rejected');
     }
 }

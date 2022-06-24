@@ -67,7 +67,7 @@
             <trix-editor input="prod_desc"></trix-editor>
         </div>
 
-        <button type="submit" class="btn btn-primary">Upload Produk</button>
+        <button type="submit" class="btn text-white" style="background-color: #00B38A;">Upload Produk</button>
     </form>
 </div>
 

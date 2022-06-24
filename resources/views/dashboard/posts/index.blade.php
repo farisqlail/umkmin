@@ -36,7 +36,7 @@
                         <h4>Table Products</h4>
                     </div>
                     <div class="col-md-6" align="right">
-                        <a href="/dashboard/posts/create" class="btn mb-3" style="background-color: #2F3A70; color: #ff;">Buat produk baru</a>
+                        <a href="/dashboard/posts/create" class="btn text-white mb-3" style="background-color: #2F3A70; color: #ff;">Buat produk baru</a>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#tableProducts').DataTable();
+            $('#tableProduct').DataTable();
         });
     </script>
 @endpush
