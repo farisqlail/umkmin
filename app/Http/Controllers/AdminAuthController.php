@@ -20,8 +20,8 @@ class AdminAuthController extends Controller
      */
     public function index()
     {   
-        $categories = CategoriProd::paginate(10);
-        $users = User::paginate(10);
+        $categories = CategoriProd::all();
+        $users = User::all();
 
         return view('dashboard.posts.admin', compact('categories','users'));
     }

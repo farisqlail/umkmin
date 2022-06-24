@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="shortcut icon" href="{{ asset('/assets/icon-web.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -15,6 +15,20 @@
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
+<style>
+    .btn-login {
+        background-color: #2F3A70; 
+        color: #fff;
+        border: none;
+    }
+
+    .btn-login:hover {
+        background-color: none;
+        color: #2F3A70;
+        border: 2px #2F3A70 solid;
+    }
+</style>
 
 <body>
       
@@ -40,7 +54,7 @@
             <div class="col d-flex align-items-center" style="height: 100vh;">
                 <div class="kotak-login d-flex align-items-center">
                     <div class="col-12">
-                        <h1 class="text-center"><b>Masuk</b></h1>
+                        <h1 class="text-center" style="color: #454555;"><b>Masuk</b></h1>
                         <div class="mx-5">
                             <form action="/masuk" method="post">
                                 @csrf
@@ -69,11 +83,11 @@
                                     @enderror
                                 </div>
                                 <div class="col mt-2">
-                                    <p class="text-end"><a href="/forget-password" class="text-dark"><b>Lupa kata Sandi?</b></a></p>
+                                    <p class="text-end"><a href="/forget-password"  style="color: #454555;"><b>Lupa kata Sandi?</b></a></p>
                                 </div>
                                 <div class="mb-3 col-sm-8 mt-5 mx-auto">
                                     <div class="d-grid gap-2 col-6 mx-auto">
-                                        <button class="btn btn-danger" type="submit"><b>Masuk</b></button>
+                                        <button class="btn btn-login" type="submit"><b>Masuk</b></button>
                                     </div>
                                 </div>
 
@@ -81,8 +95,8 @@
                         
                     </div>
                         <div class="mb-3 col-sm-8 mx-auto">
-                            <p class="text-center"><b> Baru di UMKM.IN ? </b><a href="/register" class="text-danger"
-                                    style="text-decoration: none;"><b>Daftar</b></a></p>
+                            <p class="text-center" style="color: #454555;"><b> Baru di UMKM.IN ? </b><a href="/register"
+                                    style="text-decoration: none; color: #A55659;"><b>Daftar</b></a></p>
                         </div>
                     </div>
                 </div>
