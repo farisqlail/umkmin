@@ -1,0 +1,137 @@
+.hurufkecil {
+    font-size: 11px;
+}
+
+.hurufbesar {
+    font-size: 17px;
+}
+
+.bg-nyala {
+    background-color: #F4F4F4;
+}
+
+.warna-text-bawah {
+    color: #424878;
+}
+
+.garis {        
+    position: absolute;
+    width: 130px;
+    height: 0px;
+    left: 755px;
+    top: 867px;
+
+    border: 1px solid #AEAEAE;
+    transform: rotate(90deg);
+}
+
+.sektor {
+    color: #8B8989;
+}
+
+.card {
+    background: #FFFFFF;
+    border: 1px solid #D2D2D2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+
+.color-about {
+    color: #4D8E8E;
+}
+
+
+.kotak-login{
+    height: 585px;
+    width: 636px;
+    right: 5%;
+    top: 10%;
+    bottom: 10%;
+
+    background: linear-gradient(180deg, rgba(66, 72, 120, 0.3) 0%, rgba(77, 142, 142, 0.3) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.kotak-register{
+    height: 453px;
+    width: 458px;
+
+    background: linear-gradient(180deg, rgba(66, 72, 120, 0.3) 0%, rgba(77, 142, 142, 0.3) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.kotak-registeractor{
+    height: 530px;
+    width: 514px;
+
+    background: linear-gradient(180deg, rgba(66, 72, 120, 0.3) 0%, rgba(77, 142, 142, 0.3) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.kotak-forgot{
+    height: 520px;
+    width: 566px;
+
+    background: linear-gradient(180deg, rgba(66, 72, 120, 0.3) 0%, rgba(77, 142, 142, 0.3) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.formusername{
+    position: absolute;
+    width: 562px;
+    height: 60px;
+    left: 839px;
+    top: 353px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #BCBCBC;
+}
+
+.img-umkm img{
+    width: 211px;
+}
+
+.img-login{
+    width: 570px;
+}
+
+.img-register-actor img{
+    width: 614px;
+    height: 351px;
+}
+
+.garis{
+    height: 74vh;
+    width: 4px;
+    background-color:black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-medium{
+    width: 85%!important;
+}
+
+.kotak-registeractor2{
+    height: 580px;
+    width: 1100px;
+
+    background: linear-gradient(180deg, rgba(66, 72, 120, 0.3) 0%, rgba(77, 142, 142, 0.3) 100%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.img-register-actor2 img{
+    width: 414px;
+    height: 351px;
+}
