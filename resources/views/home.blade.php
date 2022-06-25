@@ -10,6 +10,13 @@
   
     @endif
 
+<style>
+    .btn-search {
+        background-color: #2F3A70;
+        color: white;
+    }
+</style>
+
 <div class="container">
     <div class="row text-center" style="margin-top: 60">
         <div class="bg-image text-white img-fluid" style="background-image: url('/assets/bg1.png'); height:70vh">
@@ -30,7 +37,7 @@
                     <input type="text" class="form-control" placeholder="Cari produk..." name="search" value="{{ request('search') }}"> 
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-success mb-3">Cari</button>
+                    <button type="submit" class="btn btn-search mb-3">Cari</button>
                 </div>
             </form>
         </div>

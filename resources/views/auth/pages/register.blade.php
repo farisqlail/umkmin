@@ -12,6 +12,29 @@
 
     <title>Daftar Akun UMKM.IN</title>
 </head>
+<style>
+    .btn-regist-mitra {
+        border: 2px #A55659 solid;
+        color: #A55659;
+    }
+    .btn-regist-mitra:hover {
+        background-color: #A55659;
+        border: none;
+        transition: 0.2;
+        color: #fff;
+    }
+
+    .btn-regist-pengguna {
+        background-color: #2F3A70; 
+        color: #fff;
+        border: none;
+    }
+    .btn-regist-pengguna:hover {
+        background-color: none;
+        color: #2F3A70;
+        border: 2px #2F3A70 solid;
+    }
+</style>
 <body>
     <div class="container">
         <div class="img-umkm d-flex justify-content-center">
@@ -31,7 +54,7 @@
                         <p class="text-center mt-2">Jadilah pengguna dan jelajahi lebih dari <br> 3.000+ produk yang sesuai dengan <br> kebutuhan bisnis Anda</p>
                         <div class="mb-3 col-sm-10 mt-4 mx-auto">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a class="btn btn-danger" href="/registervisitor"><b>Daftar Pengguna</b></a>
+                                <a class="btn btn-regist-pengguna" href="/registervisitor"><b>Daftar Pengguna</b></a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +70,7 @@
                         <p class="text-center mt-2">Daftarkan bisnis anda sebagai mitra <br> dan promosikan produk anda ke pasar <br> Indonesia dan global</p>
                         <div class="mb-3 col-sm-10 mt-4 mx-auto">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a class="btn btn-danger" href="/registermitra"><b>Daftar Mitra</b></a>
+                                <a class="btn btn-regist-mitra" href="/registermitra"><b>Daftar Mitra</b></a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +78,7 @@
             </div>
         </div>
         <div class="mb-2 mt-5 col-sm-8 mx-auto">
-            <p class="text-center"><b> Sudah Punya Akun ? </b><a href="/login" class="text-danger"><b> Masuk Disini</b></a></p>
+            <p class="text-center"><b> Sudah Punya Akun ? </b><a href="/login" style="color: #A55659"><b> Masuk Disini</b></a></p>
         </div>
     </div>
 </body>

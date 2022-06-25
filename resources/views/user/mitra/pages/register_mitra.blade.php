@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('/assets/icon-web.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -15,15 +15,29 @@
     <title>Daftar Akun User UMKM.IN</title>
 </head>
 
+<style>
+    .btn-regist-mitra {
+        background-color: #2F3A70;
+        border: none;
+        transition: 0.2;
+        color: #fff;
+    }
+
+    .btn-regist-mitra:hover {
+        border: 2px #2F3A70 solid;
+        color: #2F3A70;
+    }
+</style>
+
 <body>
     @if (session()->has('danger'))
-    <div class="alert alert-danger col-lg-8" role="alert">
-        {{ session('danger') }}
-    </div>
+        <div class="alert alert-danger col-lg-8" role="alert">
+            {{ session('danger') }}
+        </div>
     @endif
     <div class="container">
         <div class="img-umkm d-flex justify-content-center">
-            <img src="{{ asset('/assets/Logo/UMKM.png')}}" alt="" srcset="" class="mt-3">
+            <img src="{{ asset('/assets/Logo/UMKM.png') }}" alt="" srcset="" class="mt-3">
         </div>
         <div class="row">
 
@@ -45,9 +59,9 @@
                                                 value="{{ old('nama') }}">
                                             <label for="name">Name</label>
                                             @error('name')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -59,24 +73,27 @@
                                                 value="{{ old('telp') }}">
                                             <label for="telp">Telp</label>
                                             @error('telp')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
                                     <td style="width: 300px">
                                         <div class="form-floating px-1 py-1">
-                                            <select class="form-select rounded-top @error('business_sector') is-invalid @enderror" name="business_sector" id="business_sector" >
+                                            <select
+                                                class="form-select rounded-top @error('business_sector') is-invalid @enderror"
+                                                name="business_sector" id="business_sector">
                                                 @foreach ($categories as $category)
-                                                <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                                                    <option value="{{ $category->category_name }}">
+                                                        {{ $category->category_name }}</option>
                                                 @endforeach
                                             </select>
                                             <label for="business_sector">Sektor Bisnis</label>
                                             @error('business_sector')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -90,9 +107,9 @@
                                                 value="{{ old('username') }}">
                                             <label for="username">Username</label>
                                             @error('username')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -104,9 +121,9 @@
                                                 value="{{ old('address') }}">
                                             <label for="address">Alamat</label>
                                             @error('address')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -120,9 +137,9 @@
                                                 value="{{ old('password') }}">
                                             <label for="password">Password</label>
                                             @error('password')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -134,9 +151,9 @@
                                                 value="{{ old('website') }}">
                                             <label for="website">Website</label>
                                             @error('website')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -151,9 +168,9 @@
                                                 value="{{ old('password_confirmation') }}">
                                             <label for="name">Konfirmasi password</label>
                                             @error('name')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -165,9 +182,9 @@
                                                 value="{{ old('email') }}">
                                             <label for="email">Email</label>
                                             @error('email')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </td>
@@ -175,26 +192,24 @@
                             </table>
 
                             <div class=" form-floating mt-2">
-                                <textarea
-                                    class="form-control rounded-top @error('password_confirmation') is-invalid @enderror"
-                                    placeholder="Leave a comment here" id="desc" name="desc" style="height: 150px"
-                                    required>{{ old('password_confirmation') }}</textarea>
+                                <textarea class="form-control rounded-top @error('password_confirmation') is-invalid @enderror"
+                                    placeholder="Leave a comment here" id="desc" name="desc" style="height: 150px" required>{{ old('password_confirmation') }}</textarea>
                                 <label for="desc">Deskripsi Umkm</label>
                                 @error('desc')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
 
                             <div class="mb-1 col-sm-10 mt-3 mx-auto">
                                 <div class="d-grid gap-1 col-6 mx-auto">
-                                    <button class="btn btn-danger" type="submit"><b>Buat Akun</b></button>
+                                    <button class="btn btn-regist-mitra" type="submit"><b>Buat Akun</b></button>
                                 </div>
                             </div>
                         </form>
                         <div class="">
-                            <p class="text-center"><b>Kembali ? </b><a href="/register" class="text-danger"><b>Klik
+                            <p class="text-center"><b>Kembali ? </b><a href="/register" style="color: #A55659;"><b>Klik
                                         Disini</b></a></p>
                         </div>
                     </div>

@@ -14,7 +14,19 @@
 
     <title>Daftar Akun User UMKM.IN</title>
 </head>
+<style>
+        .btn-regist-pengguna {
+        background-color: #2F3A70;
+        border: none;
+        transition: 0.2;
+        color: #fff;
+    }
 
+    .btn-regist-pengguna:hover {
+        border: 2px #2F3A70 solid;
+        color: #2F3A70;
+    }
+</style>
 <body>
     @if (session()->has('danger'))
 <div class="alert alert-danger col-lg-8" role="alert">
@@ -99,12 +111,12 @@
                             </div>
                             <div class="mb-3 col-sm-10 mt-3 mx-auto">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-danger" type="submit"><b>Buat Akun</b></button>
+                                    <button class="btn btn-regist-pengguna" type="submit"><b>Buat Akun</b></button>
                                 </div>
                             </div>
                         </form>
                         <div class="mb-3 col-sm-8 mx-auto">
-                            <p class="text-center"><b>Kembali ? </b><a href="/register" class="text-danger"><b>Klik
+                            <p class="text-center"><b>Kembali ? </b><a href="/register" style="color: #A55659;"><b>Klik
                                         Disini</b></a></p>
                         </div>
                     </div>

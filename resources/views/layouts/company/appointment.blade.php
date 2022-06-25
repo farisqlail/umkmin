@@ -115,7 +115,7 @@ Swal.fire({
                         </div>
                         
                         <div class="d-flex justify-content-center mb-4 mt-4">
-                            <button class="btn btn-success" type="submit">Kirim Pesan</button>
+                            <button class="btn" style="background-color: #2F3A70; color: #fff;" type="submit">Kirim Pesan</button>
                         </div>
                     </form>
                     </div>
