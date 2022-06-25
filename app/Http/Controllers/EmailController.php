@@ -14,6 +14,7 @@ class EmailController extends Controller
     public function kirimEmail(Request $request)
     {
         $email_desc = [
+            'id_user' => $request->id_user,
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
@@ -31,7 +32,7 @@ class EmailController extends Controller
             Email::create($email_desc);
 
             Mail::to($request->to_email)->send(new SendEmail($email_desc));
-            return redirect('/appointment' . '/' . $request->umkmName)->with('status', 'appointment-send');
+            return redirect()->back()->with('status', 'appointment-send');
         } else {
             return redirect('/appointment' . '/' . $request->umkmName)->with('status', 'appointment-failed');
         }

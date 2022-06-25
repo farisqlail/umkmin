@@ -177,6 +177,14 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.email', compact('emails'));
     }
 
+    public function history()
+    {
+        $emails = Email::join('users', 'users.id', '=', 'email_message.id_user')
+                        ->get();
+        // dd($emails);
+        return view('dashboard.posts.history', compact('emails'));
+    }
+
     public function user($id)
     {
         $user = User::with('foto')->where('id', $id)->first();

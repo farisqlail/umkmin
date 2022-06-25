@@ -10,6 +10,19 @@ class Email extends Model
     use HasFactory;
 
     protected $table = 'email_message';
-    protected $fillable = ['name', 'phone', 'email', 'date', 'time1', 
-                            'time2', 'subject', 'desc', 'to_email', 'from_email', 'status'];
+    protected $fillable = 
+    [
+        'id_user',	
+        'name', 
+        'phone', 
+        'email', 
+        'date', 
+        'time1', 
+        'time2', 
+        'subject', 
+        'desc', 
+        'to_email', 
+        'from_email', 
+        'status'
+    ];
 }

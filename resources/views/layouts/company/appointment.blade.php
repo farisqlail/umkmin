@@ -43,7 +43,7 @@ Swal.fire({
                         <div class="row">
                             <form action="/sendemail">
                                 @csrf
-                                <input type="text" name="umkmName" id="umkmName" value="{{ $umkm->name }}" hidden>
+                                <input type="text" name="id_user" id="id_user" value="{{ $umkm->id }}" hidden>
                                 <input type="text" name="to_email" id="to_email" value="{{ $umkm->email }}" hidden>
                                 @if (auth()->user())
                                 <input type="text" name="from_email" id="from_email" value="{{ auth()->user()->email }}" hidden>
