@@ -8,7 +8,7 @@
 </tr>
 <tr>
     <td class="paragraph">
-        Maaf janji kamu ditolak oleh perusahaan dengan alasan, sebagai berikut : 
+        Maaf janji kamu ditolak oleh perusahaan dengan alasan, sebagai berikut : <br>
         {{ $rejected_reason }}        
     </td>
 </tr>

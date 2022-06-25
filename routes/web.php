@@ -169,7 +169,7 @@ Route::get('/appointment/{name}', [HomeController::class, 'appoinment']);
 
 Route::get('/sendemail', [EmailController::class, 'kirimEmail']);
 Route::get('/dashboard/mailA/{id}', [EmailController::class, 'updateEmailAccepted']);
-Route::get('/dashboard/mailR/{id}', [EmailController::class, 'updateEmailRejected']);
+Route::patch('/dashboard/mailR/{id}', [EmailController::class, 'updateEmailRejected']);
 
 
 Route::get('/forget-password', [ResetPasswordController::class, 'showForgetPasswordForm']);

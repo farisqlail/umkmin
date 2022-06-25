@@ -70,7 +70,7 @@
                     <tbody>
                         @if ($emails->count())
                             @foreach ($emails as $mail)
-                                <div class="modal fade" id="exampleModalUpdate" data-id="{{ $mail->id }}" tabindex="-1" aria-labelledby="judulModal"
+                                <div class="modal fade" id="exampleModalUpdate{{ $mail->id }}" tabindex="-1" aria-labelledby="judulModal"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -90,9 +90,9 @@
                                                         <div class="mb-3">
                                                             <label for="category_name2" class="col-form-label">Tulis
                                                                 alasan</label>
-                                                            {{-- <input type="text" class="form-control" id="rejected" name="rejected"
+                                                            {{-- <input type="text" class="form-control" id="rereasonjected" name="rejected"
                           value="" required> --}}
-                                                            <textarea class="form-control" placeholder="*karena ada acara ..." id="rejected" name="rejected" style="height: 100px"></textarea>
+                                                            <textarea class="form-control" placeholder="*karena ada acara ..." id="reason" name="reason" style="height: 100px"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -118,7 +118,7 @@
                                                 data-feather="check"></span></a>
                                         <a href="" class="badge bg-danger rejected" id="modalRejectedMail"
                                             data-bs-toggle="modal" data-id="{{ $mail->id }}"
-                                            data-bs-target="#exampleModalUpdate"><span data-feather="x-circle"></span></a>
+                                            data-bs-target="#exampleModalUpdate{{ $mail->id }}"><span data-feather="x-circle"></span></a>
                                         {{-- <a href="/dashboard/mailR/{{ $mail->id }}" class="badge bg-danger"><span
                                                 data-feather="x-circle"></span></a> --}}
                                     </td>
