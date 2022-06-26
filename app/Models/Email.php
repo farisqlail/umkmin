@@ -13,6 +13,7 @@ class Email extends Model
     protected $fillable = 
     [
         'id_user',	
+        'id_product',
         'name', 
         'phone', 
         'email', 

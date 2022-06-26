@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('email_message', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_user');
+            $table->bigInteger('id_product');
             $table->string('name');
             $table->string('to_email');
             $table->string('from_email');

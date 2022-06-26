@@ -31,7 +31,7 @@
             <div class="col-md-10 px-5 mx-3">
                 <div class="d-flex justify-content-between">
                     <h4>{{ $product->prod_name }}</h4>
-                    <a href="/appointment/{{ $umkm->name }}" class="btn btn-success me-5">Buat Janji</a>
+                    <a href="/appointment/{{ $product->id }}/{{ $umkm->name }}" class="btn btn-success me-5">Buat Janji</a>
                 </div>
                 <table>
                     <tr>

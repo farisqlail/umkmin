@@ -166,7 +166,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/profile/{username}', [HomeController::class, 'profile']);
 Route::get('/catalog/{slug}', [HomeController::class, 'catalog']);
 Route::get('/catalogs/{name}', [HomeController::class, 'catalogs']);
-Route::get('/appointment/{name}', [HomeController::class, 'appoinment']);
+Route::get('/appointment/{id}/{name}', [HomeController::class, 'appoinment']);
 
 Route::get('/sendemail', [EmailController::class, 'kirimEmail']);
 Route::get('/dashboard/mailA/{id}', [EmailController::class, 'updateEmailAccepted']);

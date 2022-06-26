@@ -43,6 +43,7 @@ Swal.fire({
                         <div class="row">
                             <form action="/sendemail">
                                 @csrf
+                                <input type="text" name="id_product" id="id_product" value="{{ $products[0]['id'] }}" hidden>
                                 <input type="text" name="id_user" id="id_user" value="{{ $umkm->id }}" hidden>
                                 <input type="text" name="to_email" id="to_email" value="{{ $umkm->email }}" hidden>
                                 @if (auth()->user())
@@ -104,14 +105,6 @@ Swal.fire({
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here" id="desc" name="desc" style="height: 150px" required></textarea>
                               </div>
-                              {{-- <div class="mb-3">
-                                <label for="prod_desc" class="form-label">Silakan masukkan pesan anda</label>
-                                @error('prod_desc')
-                                <p class="text-danger">{{ $message }}</p>
-                                @enderror
-                                <input id="prod_desc" type="hidden" name="prod_desc" value="{{ old('prod_desc') }}">
-                                <trix-editor input="prod_desc"></trix-editor>
-                            </div> --}}
                         </div>
                         
                         <div class="d-flex justify-content-center mb-4 mt-4">

@@ -33,23 +33,23 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Perusahaan</th>
+                            <th scope="col">Produk</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Pembeli</th>
                             <th scope="col">Tanggal</th>
                             <th scope="col">Waktu</th>
-                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($emails as $item)
+                        @foreach ($history as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->website }}</td>
+                                <td>{{ $item->prod_title }}</td>
                                 <td>{{ $item->subject }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->date }}</td>
                                 <td>{{ $item->time1 }} - {{ $item->time2 }}</td>
-                                <td></td>
                             </tr>
                         @endforeach
                     </tbody>

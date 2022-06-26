@@ -12,7 +12,7 @@
                 <a class="nav-link active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/appointment/{{ $umkm->name }}">Buat Janji</a>
+                <a class="nav-link" href="/appointment/{{ $product->id }}/{{ $umkm->name }}">Buat Janji</a>
             </li>
         </ul>
     </div>

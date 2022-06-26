@@ -179,10 +179,11 @@ class DashboardPostController extends Controller
 
     public function history()
     {
-        $emails = Email::join('users', 'users.id', '=', 'email_message.id_user')
+        $history = Email::join('users', 'users.id', '=', 'email_message.id_user')
+                        ->join('umkm_products', 'umkm_products.user_id', '=', 'email_message.id_user')
                         ->get();
-        // dd($emails);
-        return view('dashboard.posts.history', compact('emails'));
+                        
+        return view('dashboard.posts.history', compact('history'));
     }
 
     public function user($id)

@@ -50,7 +50,7 @@ class HomeController extends Controller
         $title = "All Posts";
         $active = "posts";
         $products = ProdukUmkm::latest()->filter(request(['search', 'category']))->paginate(8)->withQueryString();
-        $umkms = User::with('foto')->where('role','umkm')->filter(request(['search']))->paginate(8)->withQueryString();
+        $umkms = User::with('foto')->where('role', 'umkm')->filter(request(['search']))->paginate(8)->withQueryString();
 
         return view('home', compact('title', 'active', 'products', 'umkms'));
     }
@@ -62,10 +62,10 @@ class HomeController extends Controller
         $umkm = User::with('foto')->where('name', $username)->first();
         $user = User::where('name', $username)->first();
         $products = ProdukUmkm::join('category_products as cp', 'umkm_products.category_id', '=', 'cp.id')
-        ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
-        ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
-        ->where('umkm_products.user_id', $user->id)
-        ->get();
+            ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
+            ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
+            ->where('umkm_products.user_id', $user->id)
+            ->get();
 
 
         return view('layouts.company.profile', compact('title', 'active', 'umkm', 'products'));
@@ -86,7 +86,7 @@ class HomeController extends Controller
         //$prodc = ProdukUmkm::where('id', $prod->id)->get();
         $title = "Detail Katalog";
         $active = "posts";
-        
+
         $id = ProdukUmkm::where('slug', $slug)->first();
         $product = ProdukUmkm::join('category_products as cp', 'umkm_products.category_id', '=', 'cp.id')
             ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
@@ -99,15 +99,9 @@ class HomeController extends Controller
             ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
             ->where('umkm_products.user_id', $id->user_id)
             ->get();
+        // dd($product);
 
         $umkm = User::with('foto')->where('users.id', $id->user_id)->first();
-        // return view('layouts.company.catalog', [
-        //     "title" => "Detail Katalog",
-        //     "active" => "posts",
-        //     'umkm' => $user,
-        //     'product' => $request,
-        //     'products' => $products
-        // ]);
 
         return view('layouts.company.catalog', compact('title', 'active', 'products', 'product', 'umkm'));
     }
@@ -119,37 +113,26 @@ class HomeController extends Controller
         $umkm = User::with('foto')->where('name', $name)->first();
         $user = User::where('name', $name)->first();
         $products = ProdukUmkm::join('category_products as cp', 'umkm_products.category_id', '=', 'cp.id')
-        ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
-        ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
-        ->where('umkm_products.user_id', $user->id)
-        ->get();
+            ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
+            ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
+            ->where('umkm_products.user_id', $user->id)
+            ->get();
 
         return view('layouts.company.catalogs', compact('title', 'active', 'products', 'umkm'));
     }
 
-    public function appoinment($name)
+    public function appoinment($id, $name)
     {
-        // $dataUmkm = User::where('id', $request->idUmkm)->get();
-        // $dataProduk = ProdukUmkm::where('id', $request->idUmkm)->get();
-
-        // return view('layouts.company.appointment', [
-        //     "title" => "Buat Janji",
-        //     "active" => "posts",
-        //     'umkm' => $user,
-        //     'products' => $dataProduk
-        // ]);
-
         $title = "Buat Janji";
         $active = "posts";
         $umkm = User::with('foto')->where('name', $name)->first();
         $user = User::where('name', $name)->first();
         $products = ProdukUmkm::join('category_products as cp', 'umkm_products.category_id', '=', 'cp.id')
-        ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
-        ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
-        ->where('umkm_products.user_id', $user->id)
-        ->get();
-
-
+            ->join('users as u', 'umkm_products.user_id', '=', 'u.id')
+            ->join('photos as p', 'umkm_products.photo_id', '=', 'p.id')
+            ->where('umkm_products.user_id', $user->id)
+            ->where('umkm_products.id', $id)
+            ->get();
         return view('layouts.company.appointment', compact('title', 'active', 'umkm', 'products'));
     }
 
@@ -164,9 +147,8 @@ class HomeController extends Controller
         $title = "All Posts";
         $active = "posts";
         $products = ProdukUmkm::latest()->filter(request(['search', 'category']))->paginate(8)->withQueryString();
-        $umkms = User::with('foto')->where('role','umkm')->filter(request(['search']))->paginate(8)->withQueryString();
+        $umkms = User::with('foto')->where('role', 'umkm')->filter(request(['search']))->paginate(8)->withQueryString();
 
         return view('/products', compact('title', 'active', 'products', 'umkms'));
     }
-
 }

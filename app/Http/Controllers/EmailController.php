@@ -15,6 +15,7 @@ class EmailController extends Controller
     {
         $email_desc = [
             'id_user' => $request->id_user,
+            'id_product' => $request->id_product,
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
