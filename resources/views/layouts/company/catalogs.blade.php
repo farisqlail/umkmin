@@ -9,10 +9,7 @@
                 <a class="nav-link  text-white" aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="/appointment/{{ $product->id }}/{{ $umkm->name }}">Buat Janji</a>
+                <a class="nav-link text-dark active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>
             </li>
         </ul>
     </div>
