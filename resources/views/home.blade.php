@@ -139,10 +139,10 @@
                             <img src="http://source.unsplash.com/300x200?news" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <a href="" style="text-decoration: none">April 15, 2022</a>
-                                    <a href="" style="text-decoration: none">UMKM.IN News</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">April 15, 2022</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">UMKM.IN News</a>
                                 </div>
-                                <p class="card-text fw-bold hurufbesar">Mantap! Tembus Rp 156M, Komoditas Ikan Bali
+                                <p class="card-text text-dark fw-bold hurufbesar">Mantap! Tembus Rp 156M, Komoditas Ikan Bali
                                     diminati di Amerika
                                 </p>
                             </div>
@@ -153,10 +153,10 @@
                             <img src="http://source.unsplash.com/300x200?news" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <a href="" style="text-decoration: none">April 15, 2022</a>
-                                    <a href="" style="text-decoration: none">UMKM.IN News</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">April 15, 2022</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">UMKM.IN News</a>
                                 </div>
-                                <p class="card-text fw-bold hurufbesar">Ini 'Pahlawan' yang Bikin Neraca Dagang RI
+                                <p class="card-text text-dark fw-bold hurufbesar">Ini 'Pahlawan' yang Bikin Neraca Dagang RI
                                     Surplus 23 Kali Beruntun
                                 </p>
                             </div>
@@ -167,10 +167,10 @@
                             <img src="http://source.unsplash.com/300x200?news" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <a href="" style="text-decoration: none">April 15, 2022</a>
-                                    <a href="" style="text-decoration: none">UMKM.IN News</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">April 15, 2022</a>
+                                    <a href="" class="text-muted" style="text-decoration: none">UMKM.IN News</a>
                                 </div>
-                                <p class="card-text fw-bold hurufbesar">Jajanan Lokal RI Bisa Tembus Pasar Ekspor,
+                                <p class="card-text text-dark fw-bold hurufbesar">Jajanan Lokal RI Bisa Tembus Pasar Ekspor,
                                     Caranya?
                                 </p>
                             </div>

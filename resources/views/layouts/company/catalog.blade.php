@@ -5,13 +5,13 @@
         <div class="col">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
+                    <a class="nav-link text-white " aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>
+                    <a class="nav-link text-dark active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/appointment/{{ $umkm->name }}">Buat Janji</a>
+                    <a class="nav-link text-white" href="/appointment/{{ $umkm->name }}">Buat Janji</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-10 px-5 mx-3">
                 <div class="d-flex justify-content-between">
-                    <h4>{{ $product->prod_name }}</h4>
+                    <h4 class="text-white">{{ $product->prod_name }}</h4>
                     <a href="/appointment/{{ $product->id }}/{{ $umkm->name }}" class="btn btn-success me-5">Buat Janji</a>
                 </div>
                 <table>

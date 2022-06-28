@@ -66,26 +66,6 @@
                         @endforeach
                     </div>
                 </div>
-
-                {{-- <div class="card border-secondary mb-3" style="max-width: 18rem;">
-                    <div class="card-header fw-bold">Wilayah</div>
-                    <div class="card-body text-secondary">
-                        <a href="" class="card-text sektor" style="text-decoration: none">Jawa Timur (122)</a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">Jawa Barat (98)</a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">Jawa Tengah (216)</a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">Banten (110)</a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">DKI Jakarta (76)</a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">DI Yogyakarta (85) </a>
-                        <br>
-                        <a href="" class="card-text sektor" style="text-decoration: none">Bali (105)</a>
-                        <br>
-                    </div>
-                </div> --}}
             </div>
         </div>
 
@@ -94,9 +74,6 @@
             <form action="/companies" class="row ms-2">
                 <div class="d-flex">
                     <div class="col-11">
-                        {{-- @if (request('category'))
-                        <input type="hidden" name="category" value="{{ request('category') }}">
-                        @endif --}}
                         <label for="cariPerusahaan" class="visually-hidden"></label>
                         <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">  
                     </div>
@@ -116,8 +93,8 @@
                         <img src="http://source.unsplash.com/300x200?company" class="card-img-top" alt="..."  width="300" height="200">
                         @endif
                         <div class="card-body">
-                            <h5 class="card-title fw-bold hurufbesar">{{ $umkm->name }}</h5>
-                            <p class="card-text fw-light hurufkecil">{{ $umkm->address }}</p>
+                            <h5 class="card-title fw-bold text-dark hurufbesar">{{ $umkm->name }}</h5>
+                            <p class="card-text fw-light text-dark hurufkecil">{{ $umkm->address }}</p>
                         </div>
                     </div>
                 </div>

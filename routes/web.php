@@ -91,9 +91,6 @@ Route::get('/about', function () {
     ]);
 });
 
-
-
-
 Route::controller(GeneralController::class)->group(function () {
     Route::get('/login', 'indexlogin')->name('login');
     Route::post('/login', 'login')->name('auth.login');

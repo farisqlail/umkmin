@@ -12,15 +12,28 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('/assets/icon-web.png') }}">
     <script type="text/javascript" src="/js/trix.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        trix-toolbar [data-trix-button-group="file-tools"]{
-          display: none;
+        body {
+            background-color: #2F3A70;
+            color: #fff;
         }
-      </style>
+
+        body a {
+            color: #fff;
+        }
+
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+
+        .bg-nyala {
+            background-color: #464E87;
+        }
+    </style>
 
     <title>UMKM.IN | {{ $title }}</title>
 </head>
@@ -41,16 +54,16 @@
                     <div class="row mt-2 mb-5">
 
                         <div class="col-sm-3">
-                            <img src="{{asset('/assets/sekolah.png') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('/assets/sekolah.png') }}" class="card-img-top" alt="...">
                         </div>
                         <div class="col-sm-3">
-                            <img src="{{asset('/assets/kampusmerdeka.png') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('/assets/kampusmerdeka.png') }}" class="card-img-top" alt="...">
                         </div>
                         <div class="col-sm-3">
-                            <img src="{{asset('/assets/bineka.png') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('/assets/bineka.png') }}" class="card-img-top" alt="...">
                         </div>
                         <div class="col-sm-3">
-                            <img src="{{asset('/assets/sekolahekspor.png') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('/assets/sekolahekspor.png') }}" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </div>

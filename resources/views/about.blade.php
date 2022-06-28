@@ -106,9 +106,9 @@
                     <div class="text-center" style="margin:auto">
                         <div style="margin-top: 300px; font-size: 13px">
                             <div class="card py-2" style="width: 13rem;">
-                                <p class="card-text fw-bold">Ichsan Ghaniy Rosyidi</p>
+                                <p class="card-text fw-bold text-dark">Ichsan Ghaniy Rosyidi</p>
                                 <hr width="70" style="margin: auto; ">
-                                <p class="card-text mt-1">Project Owner</p>
+                                <p class="card-text mt-1 text-muted">Project Owner</p>
                             </div>
                         </div>
                     </div>
@@ -120,9 +120,9 @@
                     <div class="text-center" style="margin:auto">
                         <div style="margin-top: 300px; font-size: 13px">
                             <div class="card py-2" style="width: 13rem;">
-                                <p class="card-text fw-bold">Faisal Maulana Akbar</p>
+                                <p class="card-text fw-bold text-dark">Faisal Maulana Akbar</p>
                                 <hr width="70" style="margin: auto; ">
-                                <p class="card-text mt-1">Frontend Developer</p>
+                                <p class="card-text mt-1 text-muted">Frontend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -134,9 +134,9 @@
                     <div class="text-center" style="margin:auto">
                         <div style="margin-top: 300px; font-size: 13px">
                             <div class="card py-2" style="width: 13rem;">
-                                <p class="card-text fw-bold">Barron Mahardhika Al Fahmi</p>
+                                <p class="card-text fw-bold text-dark">Barron Mahardhika Al Fahmi</p>
                                 <hr width="70" style="margin: auto; ">
-                                <p class="card-text mt-1">Frontend Developer</p>
+                                <p class="card-text mt-1 text-muted">Frontend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -150,9 +150,9 @@
                     <div class="text-center " style="margin:auto">
                         <div style="margin-top: 300px; font-size: 13px">
                             <div class="card py-2" style="width: 13rem;">
-                                <p class="card-text fw-bold">Marcellinus Calvin Gunawan</p>
+                                <p class="card-text fw-bold text-dark">Marcellinus Calvin Gunawan</p>
                                 <hr width="70" style="margin: auto; ">
-                                <p class="card-text mt-1">Backend Developer</p>
+                                <p class="card-text mt-1 text-muted">Backend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -164,9 +164,9 @@
                     <div class="text-center" style="margin:auto">
                         <div style="margin-top: 300px; font-size: 13px">
                             <div class="card py-2" style="width: 13rem;">
-                                <p class="card-text fw-bold">Hildan Hanjar Utama</p>
+                                <p class="card-text fw-bold text-dark">Hildan Hanjar Utama</p>
                                 <hr width="70" style="margin: auto; ">
-                                <p class="card-text mt-1">Backend Developer</p>
+                                <p class="card-text mt-1 text-muted">Backend Developer</p>
                             </div>
                         </div>
                     </div>

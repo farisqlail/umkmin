@@ -13,11 +13,11 @@
           @if (auth()->user()->role == 'umkm')
                         @if (!empty(auth()->user()->email_verified_at))
                             <li class="nav-item border-end">
-                                <a class="nav-link" href="/dashboard">UMKM</a>
+                                <a class="nav-link text-white" href="/dashboard">UMKM</a>
                             </li>
                         @else
                             <li class="nav-item border-end">
-                                <a class="nav-link" href="/">UMKM</a>
+                                <a class="nav-link text-white" href="/">UMKM</a>
                             </li>
                             <script type='text/javascript'> 
                               Swal.fire({
@@ -33,28 +33,28 @@
           @endif
           @else
           <li class="nav-item border-end visually-hidden">
-            <a class="nav-link"href="/dashboard">UMKM</a>
+            <a class="nav-link text-white"href="/dashboard">UMKM</a>
           </li>
           @endauth
           <li class="nav-item border-end">
-            <a class="nav-link"href="/">Beranda</a>
+            <a class="nav-link text-white"href="/">Beranda</a>
           </li>
           <li class="nav-item border-end">
-            <a class="nav-link" href="/about">Tentang Kami</a>
+            <a class="nav-link text-white" href="/about">Tentang Kami</a>
           </li>
           @auth
           <form action="/keluar" method="post">
             @csrf
           <li class="nav-item">
-            <a class="" style="text-decoration: none;"><button class="nav-link btn btn-link mt-1 ms-2" type="submit" style="padding: 0;">Keluar</button></a>
+            <a class="" style="text-decoration: none;"><button class="nav-link text-white btn btn-link mt-1 ms-2" type="submit" style="padding: 0;">Keluar</button></a>
           </li>
           </form>
           @else
           <li class="nav-item border-end">
-            <a class="nav-link" href="/login">Masuk</a>
+            <a class="nav-link text-white" href="/login">Masuk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Daftar</a>
+            <a class="nav-link text-white" href="/register">Daftar</a>
           </li>
           @endauth
         </ul>
