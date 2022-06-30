@@ -32,10 +32,6 @@
                             <a class="nav-link" href="/manajemen/categories">Admin</a>
                         </li>
                     @endif
-                @else
-                    <li class="nav-item border-end visually-hidden">
-                        <a class="nav-link text-white"href="/dashboard">UMKM</a>
-                    </li>
                 @endauth
                 <li class="nav-item border-end">
                     <a class="nav-link text-white"href="/">Beranda</a>

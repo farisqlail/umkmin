@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="{{ asset('/assets/icon-web.png') }}">
 
     <!-- Google Fonts -->
     <link
@@ -49,9 +47,13 @@
                     @auth
                         @if (auth()->user()->role == 'umkm')
                             @if (!empty(auth()->user()->email_verified_at))
-                                <li><a class="nav-link scrollto active" href="/dashboard">UMKM</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="/dashboard">UMKM</a>
+                                </li>
                             @else
-                                <li><a class="nav-link scrollto" href="/">UMKM</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link scrollto" href="/">UMKM</a>
+                                </li>
                                 <script type='text/javascript'>
                                     Swal.fire({
                                         text: 'Anda harus verified email terlebih dahulu!!!',
@@ -60,21 +62,33 @@
                                 </script>
                             @endif
                         @elseif (auth()->user()->role == 'admin')
-                            <li><a class="nav-link scrollto" href="/manajemen/categories">Admin</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link scrollto" href="/manajemen/categories">Admin</a>
+                            </li>
                         @endif
-                    @else
-                        <li><a class="nav-link scrollto " href="/dashboard">UMKM</a></li>
                     @endauth
-                    <li><a class="nav-link scrollto" href="/">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="/about">Tentang</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto"href="/">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="/about">Tentang Kami</a>
+                    </li>
                     @auth
                         <form action="/keluar" method="post">
                             @csrf
-                            <li><a class="nav-link scrollto" href="" type="submit">Keluar</a></li>
+                            <li class="nav-item">
+                                <a class="" style="text-decoration: none; margin-top: -20px;">
+                                    <button class="btn-get-started scrollto" style="border: none;" type="submit">Keluar</button>
+                                </a>
+                            </li>
                         </form>
                     @else
-                        <li><a class="nav-link scrollto" href="/login">Masuk</a></li>
-                        <li><a class="nav-link scrollto" href="/register">Daftar</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="/login">Masuk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="/register">Daftar</a>
+                        </li>
                     @endauth
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -156,8 +170,8 @@
                             <input type="text" id="idUmkm" name="idUmkm" value="{{ $umkm->id }}" hidden>
                             <div class="card">
                                 @if ($umkm->photo_id)
-                                    <img src="{{ asset('storage/' . $umkm->foto->photo_name) }}" class="card-img-top"
-                                        alt="..." width="300" height="200">
+                                    <img src="{{ asset('storage/' . $umkm->foto->photo_name) }}"
+                                        class="card-img-top" alt="..." width="300" height="200">
                                 @else
                                     <img src="http://source.unsplash.com/300x200?company" class="card-img-top"
                                         alt="..." width="300" height="200">
@@ -233,29 +247,29 @@
 
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="client-logo">
-                                <img src="{{ asset('/assets/sekolah.png') }}" class="img-fluid"
-                                    alt="">
+                                <img src="{{ asset('/assets/sekolah.png') }}" class="img-fluid" alt=""
+                                    width="100px" style="height: auto;">
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="client-logo">
                                 <img src="{{ asset('/assets/kampusmerdeka.png') }}" class="img-fluid"
-                                    alt="">
+                                    alt="" width="100px" style="height: auto;">
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="client-logo">
-                                <img src="{{ asset('/assets/bineka.png') }}" class="img-fluid"
-                                    alt="">
+                                <img src="{{ asset('/assets/bineka.png') }}" class="img-fluid" alt=""
+                                    width="100px" style="height: auto;">
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="client-logo">
                                 <img src="{{ asset('/assets/sekolahekspor.png') }}" class="img-fluid"
-                                    alt="">
+                                    alt="" width="100px" style="height: auto;">
                             </div>
                         </div>
 
@@ -270,48 +284,11 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Butterfly</h3>
+                        <h3>UMKM.IN</h3>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <strong>Phone:</strong> (+62) 24 376 1402<br>
+                            <strong>Email:</strong> info@umkm.in.com<br>
                         </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Social Networks</h4>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>
                     </div>
 
                 </div>
@@ -319,11 +296,8 @@
         </div>
 
         <div class="container py-4">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Butterfly</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            <div class="copyright justify-content-end">
+                &copy; Copyright <strong><span>UMKM.IN</span></strong>. All Rights Reserved
             </div>
         </div>
     </footer><!-- End Footer -->
