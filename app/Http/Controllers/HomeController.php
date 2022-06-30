@@ -133,6 +133,7 @@ class HomeController extends Controller
             ->where('umkm_products.user_id', $user->id)
             ->where('umkm_products.id', $id)
             ->get();
+        // dd($products);
         return view('layouts.company.appointment', compact('title', 'active', 'umkm', 'products'));
     }
 

@@ -38,7 +38,6 @@ class DashboardPostController extends Controller
     {
         $categories = CategoriProd::all();
         return view('dashboard.posts.create', compact('categories'));
-
     }
 
     /**
@@ -49,8 +48,8 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([ 
-            'category_id' => 'required',  
+        $validatedData = $request->validate([
+            'category_id' => 'required',
             'prod_title' => 'required|max:255',
             'prod_name' => 'required|max:255',
             'slug' => 'required',
@@ -58,15 +57,15 @@ class DashboardPostController extends Controller
             'prod_desc' => 'required'
         ]);
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             $validatedPhoto['photo_name'] = $request->file('image')->store('post-images');
-        }   
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->prod_desc), 200);
 
         $idPhoto = Foto::create($validatedPhoto)->id;
-        
+
         $validatedData['photo_id'] = $idPhoto;
         ProdukUmkm::create($validatedData);
 
@@ -109,16 +108,16 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, ProdukUmkm $post)
     {
-        $rules = [ 
-            'category_id' => 'required',  
+        $rules = [
+            'category_id' => 'required',
             'prod_title' => 'required|max:255',
             'prod_name' => 'required|max:255',
             'slug' => 'required',
             'prod_desc' => 'required'
         ];
 
-        
-        if($request->slug != $post->slug){
+
+        if ($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:umkm_products';
         }
 
@@ -128,12 +127,12 @@ class DashboardPostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        if($request->file('photo_name')){
-            if($request->oldImage){
+        if ($request->file('photo_name')) {
+            if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
             $validatedPhoto['photo_name'] = $request->file('photo_name')->store('post-images');
-        }   
+        }
 
 
 
@@ -141,10 +140,10 @@ class DashboardPostController extends Controller
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         ProdukUmkm::where('id', $post->id)
-                ->update($validatedData);
-        
-        Foto::where('id', $post->photo_id )
-                ->update($validatedPhoto);
+            ->update($validatedData);
+
+        Foto::where('id', $post->photo_id)
+            ->update($validatedPhoto);
 
         return redirect('/dashboard/posts')->with('status', 'product-updated');
     }
@@ -158,7 +157,7 @@ class DashboardPostController extends Controller
     public function destroy(ProdukUmkm $post)
     {
         ProdukUmkm::destroy($post->id);
-        if($post->image){
+        if ($post->image) {
             Storage::delete($post->image);
         }
         return redirect('/dashboard/posts')->with('status', 'product-destroy');
@@ -173,17 +172,20 @@ class DashboardPostController extends Controller
     public function email()
     {
         $emails = Email::where('to_email', auth()->user()->email)
-                        ->where('status', 'pending')->get();
+            ->where('status', 'pending')->get();
         return view('dashboard.posts.email', compact('emails'));
     }
 
     public function history()
     {
-        $history = Email::join('users', 'users.id', '=', 'email_message.id_user')
-                        ->join('umkm_products', 'umkm_products.user_id', '=', 'email_message.id_user')
-                        ->get();
-                        
-        return view('dashboard.posts.history', compact('history'));
+        $dataAppoiments = Email::join('umkm_products', 'umkm_products.id', '=', 'email_message.id_product')
+            ->get();
+        $company = User::where('id', '=', $dataAppoiments[0]['id_user'])->get();
+        
+        return view('dashboard.posts.history', [
+            'dataAppoiments' => $dataAppoiments,
+            'company' => $company
+        ]);
     }
 
     public function user($id)
@@ -196,7 +198,7 @@ class DashboardPostController extends Controller
             'data' => $user
         ]);
     }
-    
+
     public function index2()
     {
         $idProduk = ProdukUmkm::where('user_id', auth()->user()->id)->first();
@@ -213,12 +215,10 @@ class DashboardPostController extends Controller
                 'umkms' => User::where('id', auth()->user()->id)->first()
             ]);
         }
-        
     }
 
     public function showForgetPasswordForm()
     {
-       return view('auth.pages.forgot');
+        return view('auth.pages.forgot');
     }
-
 }

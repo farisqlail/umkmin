@@ -41,10 +41,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($history as $item)
+                        @foreach ($dataAppoiments as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->website }}</td>
+                                <td>{{ $company[0]['website'] }}</td>
                                 <td>{{ $item->prod_title }}</td>
                                 <td>{{ $item->subject }}</td>
                                 <td>{{ $item->name }}</td>

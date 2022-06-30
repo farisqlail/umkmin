@@ -28,6 +28,7 @@ class EmailController extends Controller
             'to_email' => $request->to_email,
             'from_email' => $request->from_email,
         ];
+        // dd($email_desc);
 
         if (auth()->user()) {
             Email::create($email_desc);
