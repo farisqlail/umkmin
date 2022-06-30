@@ -1,9 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.company.main')
 
-@section('container')
+@section('body')
 <div class="container">
     <div class="row ms-4">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: 100px;">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>

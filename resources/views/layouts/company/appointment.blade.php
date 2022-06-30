@@ -22,13 +22,13 @@ Swal.fire({
     <div class="col">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
+              <a class="nav-link text-dark" aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/catalogs/{{ $umkm->name }}">Katalog Produk</a>
+              <a class="nav-link text-dark" href="/catalogs/{{ $umkm->name }}">Katalog Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/appointment/{{ $umkm->name }}">Buat Janji</a>
+              <a class="nav-link text-dark active" href="/appointment/{{ $umkm->name }}">Buat Janji</a>
             </li>
           </ul>
     </div>

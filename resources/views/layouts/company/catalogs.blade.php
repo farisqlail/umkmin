@@ -6,7 +6,7 @@
     <div class="col">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link  text-white" aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
+                <a class="nav-link text-dark" aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark active" href="/catalog/{{ $umkm->name }}">Katalog Produk</a>

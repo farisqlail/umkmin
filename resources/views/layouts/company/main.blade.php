@@ -3,7 +3,7 @@
 @section('container')
     <div class="container">
         <div class="row ">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: 100px;">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="row mt-5 justify-content-center">
-            <div class="card" style="width: 60rem; background-color: #464E87;">
+            <div class="card" style="width: 60rem;">
                 <div class="card-body px-4 py-5">
                     <div class="d-flex">
                         <div class="container col-2">
@@ -69,34 +69,34 @@
                         </div>
                         <div class="col-10 ms-5">
                             <div class="d-flex justify-content-between">
-                                <h3 class="fw-bold text-white">{{ $umkm->name }}</h3>
+                                <h3 class="fw-bold">{{ $umkm->name }}</h3>
                                 {{-- <a href="/appointment/{{ $umkm->name }}" class="btn btn-success me-5">Buat Janji</a> --}}
                             </div>
                             <div class="d-flex me-5">
                                 <span data-feather="map-pin"></span>
-                                <p class="ms-2 text-white">{{ $umkm->address }}</p>
+                                <p clas>{{ $umkm->address }}</p>
                             </div>
                             <div class="d-flex mt-4">
                                 <div class="col-auto">
-                                    <h6 class="text-white">Website</h6>
-                                    <h6 class="text-white">{{ $umkm->website }}</h6>
+                                    <h6>Website</h6>
+                                    <h6>{{ $umkm->website }}</h6>
                                 </div>
                                 <span class="border-end col-auto ms-4 me-4"></span>
                                 <div class="col-auto">
-                                    <h6 class="text-white">Sektor Bisnis</h6>
-                                    <h6 class="text-white">{{ $umkm->business_sector }}</h6>
-                                </div>
-
-                                <span class="border-end col-auto ms-4 me-4"></span>
-                                <div class="col-auto">
-                                    <h6 class="text-white">Alamat Email</h6>
-                                    <h6 class="text-white">{{ $umkm->email }}</h6>
+                                    <h6>Sektor Bisnis</h6>
+                                    <h6>{{ $umkm->business_sector }}</h6>
                                 </div>
 
                                 <span class="border-end col-auto ms-4 me-4"></span>
                                 <div class="col-auto">
-                                    <h6 class="text-white">Nomor Telepon</h6>
-                                    <h6 class="text-white">{{ $umkm->telp }}</h6>
+                                    <h6>Alamat Email</h6>
+                                    <h6>{{ $umkm->email }}</h6>
+                                </div>
+
+                                <span class="border-end col-auto ms-4 me-4"></span>
+                                <div class="col-auto">
+                                    <h6>Nomor Telepon</h6>
+                                    <h6>{{ $umkm->telp }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -106,9 +106,6 @@
         </div>
 
         @yield('body')
-
-
-
 
     </div>
 @endsection

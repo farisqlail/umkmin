@@ -1,9 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.company.main')
 
-@section('container')
+@section('body')
 <div class="container">
-    <div class="row ms-4" >
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="row ms-4">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"  style="margin-top: 100px;">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -78,11 +78,11 @@
                         <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">  
                     </div>
                     <div class="ms-2">
-                        <button type="submit" class="btn btn-success mb-3"><span data-feather="search"></span></button>
+                        <button type="submit" class="btn btn-success mb-3"><i class="bx bx-search"></i></button>
                     </div>
                 </div>
             </form>
-            <div class="row ms-2">
+            <div class="row ms-2 mt-3">
                 @if ($umkms->count())
                 @foreach ($umkms as $umkm)
                 <div class="col-sm-4 mb-3">

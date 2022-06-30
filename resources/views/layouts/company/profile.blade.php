@@ -9,7 +9,7 @@
                   <a class="nav-link text-dark active" aria-current="page" href="/profile/{{ $umkm->name }}">Gambaran</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="/catalogs/{{ $umkm->name }}">Katalog Produk</a>
+                  <a class="nav-link text-dark" href="/catalogs/{{ $umkm->name }}">Katalog Produk</a>
                 </li>
               </ul>
         </div>
@@ -37,7 +37,7 @@
                             <img src="{{ asset('storage/' . $prod->photo_name) }}" class="card-img-top" alt="..."
                                 width="300" height="200">
                             <div class="card-body">
-                                <a href="" class="text-black" style="text-decoration: none;">
+                                <a href="/catalog/{{ $prod->slug }}" class="text-black" style="text-decoration: none;">
                                     <h5 class="card-title fw-bold hurufbesar">{{ $prod->prod_title }}</h5>
                                 </a>
                                 <p class="card-text fw-light hurufkecil">{{ $prod->prod_name }}</p>

@@ -16,24 +16,6 @@
     <link rel="shortcut icon" href="{{ asset('/assets/icon-web.png') }}">
     <script type="text/javascript" src="/js/trix.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-        body {
-            background-color: #2F3A70;
-            color: #fff;
-        }
-
-        body a {
-            color: #fff;
-        }
-
-        trix-toolbar [data-trix-button-group="file-tools"] {
-            display: none;
-        }
-
-        .bg-nyala {
-            background-color: #464E87;
-        }
-    </style>
 
     <title>UMKM.IN | {{ $title }}</title>
 </head>
@@ -46,54 +28,88 @@
         @yield('container')
     </div>
 
-    <div class="container">
-        <div class="row mt-5 bg-nyala">
-            <div class="col">
-                <h3 class="mb-5 mt-5 text-center">Mitra Kami</h3>
-                <div class="row justify-content-center ">
-                    <div class="row mt-2 mb-5">
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="mt-5">
 
-                        <div class="col-sm-3">
-                            <img src="{{ asset('/assets/sekolah.png') }}" class="card-img-top" alt="...">
+        <div class="footer-newsletter">
+            <h4></h4>
+            <!-- ======= Clients Section ======= -->
+            <section id="clients" class="clients">
+                <div class="container">
+
+                    <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="client-logo">
+                                <img src="{{ asset('/assets/sekolah.png') }}" class="img-fluid" alt=""
+                                    width="100px" style="height: auto;">
+                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="{{ asset('/assets/kampusmerdeka.png') }}" class="card-img-top" alt="...">
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="client-logo">
+                                <img src="{{ asset('/assets/kampusmerdeka.png') }}" class="img-fluid"
+                                    alt="" width="100px" style="height: auto;">
+                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="{{ asset('/assets/bineka.png') }}" class="card-img-top" alt="...">
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="client-logo">
+                                <img src="{{ asset('/assets/bineka.png') }}" class="img-fluid" alt=""
+                                    width="100px" style="height: auto;">
+                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="{{ asset('/assets/sekolahekspor.png') }}" class="card-img-top" alt="...">
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="client-logo">
+                                <img src="{{ asset('/assets/sekolahekspor.png') }}" class="img-fluid"
+                                    alt="" width="100px" style="height: auto;">
+                            </div>
                         </div>
+
                     </div>
-                </div>
 
-                <h3 class="fw-bold warna-text-bawah">UMKM.IN</h3>
-                <div class="d-flex warna-text-bawah">
-                    <span data-feather="phone"></span>
-                    <p class="ms-2">(+62) 24 376 1402</p>
                 </div>
-                <div class="d-flex warna-text-bawah">
-                    <span data-feather="mail"></span>
-                    <p class="mb-5 ms-2">info@umkm.in.com</p>
+            </section><!-- End Clients Section -->
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>UMKM.IN</h3>
+                        <p>
+                            <strong>Phone:</strong> (+62) 24 376 1402<br>
+                            <strong>Email:</strong> info@umkm.in.com<br>
+                        </p>
+                    </div>
+
                 </div>
             </div>
-
-            <p class="mb-3 text-center warna-text-bawah">Copyright © 2020 UMKM.IN. All rights reserved.</p>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
-    </script>
+        <div class="container py-4">
+            <div class="copyright justify-content-end">
+                &copy; Copyright <strong><span>UMKM.IN</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer><!-- End Footer -->
 
-    <script src="/js/dashboard.js"></script>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('./users/assets/vendor/purecounter/purecounter.js') }}"></script>
+    <script src="{{ asset('./users/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('./users/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('./users/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('./users/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('./users/assets/vendor/php-email-form/validate.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ asset('./users/assets/js/main.js') }}"></script>
+
 </body>
 
 </html>
