@@ -52,7 +52,7 @@
                 <img src="{{ asset('/assets/Logo/UMKM.png') }}" alt="" srcset="" class="img-login ">
             </div>
             <div class="col d-flex align-items-center" style="height: 100vh;">
-                <div class="kotak-login d-flex align-items-center">
+                <div class="card d-flex align-items-center p-4 shadow rounded" style="width: 40rem; border: none">
                     <div class="col-12">
                         <h1 class="text-center" style="color: #454555;"><b>Masuk</b></h1>
                         <div class="mx-5">

@@ -51,9 +51,9 @@
                 <div class="garis mt-5"></div>
             </div>
             <div class="col">
-                <div class="kotak-registeractor mt-5">
+                <div class="card shadow rounded mt-5" style="width: 30rem; border: none;">
                     <div class="container-medium mx-auto pt-4">
-                        <h3 class="mt-2"><b>Daftar Sebagai Pengguna</b></h3>
+                        <h3 class="mt-2 mb-2"><b>Daftar Sebagai Pengguna</b></h3>
                         <form action="/regisuser" method="post">
                             @csrf
                             <input type="text" name="role" id="role" value="user" hidden>
