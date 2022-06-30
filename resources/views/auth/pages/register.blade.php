@@ -45,7 +45,7 @@
         <div class="img-umkm d-flex justify-content-center">
             <img src="{{ asset('/assets/Logo/UMKM.png') }}" alt="" srcset="" class="mt-3">
         </div>
-        <div class="card p-4 shadow rounded mt-4">
+        <div class="card p-4 shadow rounded mt-4 mb-4" style="border: none;">
             <div class="card-body">
                 <h3 class="text-center mt-4"><b>Bergabunglah dengan UMKM.IN, bisnis anda menuju <br> ekonomi terbesar di
                         Asia Tenggara</b></h3>

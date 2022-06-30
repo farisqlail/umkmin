@@ -180,12 +180,19 @@ class DashboardPostController extends Controller
     {
         $dataAppoiments = Email::join('umkm_products', 'umkm_products.id', '=', 'email_message.id_product')
             ->get();
-        $company = User::where('id', '=', $dataAppoiments[0]['id_user'])->get();
-        
-        return view('dashboard.posts.history', [
-            'dataAppoiments' => $dataAppoiments,
-            'company' => $company
-        ]);
+
+        if ($dataAppoiments->count() > 0) {
+            $company = User::where('id', '=', $dataAppoiments[0]['id_user'])->get();
+
+            return view('dashboard.posts.history', [
+                'dataAppoiments' => $dataAppoiments,
+                'company' => $company
+            ]);
+        } else {
+            return view('dashboard.posts.history', [
+                'dataAppoiments' => $dataAppoiments,
+            ]);
+        }
     }
 
     public function user($id)

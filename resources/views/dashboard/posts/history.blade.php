@@ -21,11 +21,7 @@
             <div class="table-responsive">
                 <div class="row mb-4">
                     <div class="col-md-6">
-                      <h4>Table History</h4>
-                    </div>
-                    <div class="col-md-6" align="right">
-                        <button type="button" class="btn" style="background-color: #2F3A70; color: #fff;" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCreate" data-bs-whatever="@mdo">Tambah Kategori Baru</button>
+                        <h4>Table History</h4>
                     </div>
                 </div>
                 <table class="table" id="tableKategori">
@@ -41,17 +37,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($dataAppoiments as $item)
+                        @if (!empty($dataAppoiments))
+                            @foreach ($dataAppoiments as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $company[0]['website'] }}</td>
+                                    <td>{{ $item->prod_title }}</td>
+                                    <td>{{ $item->subject }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->date }}</td>
+                                    <td>{{ $item->time1 }} - {{ $item->time2 }}</td>
+                                </tr>
+                            @endforeach
+                        @else
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $company[0]['website'] }}</td>
-                                <td>{{ $item->prod_title }}</td>
-                                <td>{{ $item->subject }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->date }}</td>
-                                <td>{{ $item->time1 }} - {{ $item->time2 }}</td>
+                                <td colspan="7" class="text-center">Tidak ada data</td>
                             </tr>
-                        @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>

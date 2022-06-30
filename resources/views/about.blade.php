@@ -99,38 +99,10 @@
 
         <div class="row bg-nyala">
             <div class="d-flex justify-content-center mt-5">
-                <h2 class="fw-bold">Tim</h2>
-                <h2 class="ms-2 fw-bold color-about">Kami</h2>
+                <h2 class="fw-bold">Developer</h2>
+                <h2 class="ms-2 fw-bold color-about">Website</h2>
             </div>
             <div class="d-flex justify-content-center mb-5 mt-4">
-                <div class="px-4">
-                    <div class="card"
-                        style="background-image: url('{{ asset('/assets/gagan.png') }}'); height:340px; width: 300px">
-                        <div class="text-center" style="margin:auto">
-                            <div style="margin-top: 300px; font-size: 13px">
-                                <div class="card py-2" style="width: 13rem;">
-                                    <p class="card-text fw-bold text-dark">Ichsan Ghaniy Rosyidi</p>
-                                    <hr width="70" style="margin: auto; ">
-                                    <p class="card-text mt-1 text-muted">Project Owner</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4">
-                    <div class="card"
-                        style="background-image: url('{{ asset('/assets/faisal.png') }}'); height:340px; width: 300px">
-                        <div class="text-center" style="margin:auto">
-                            <div style="margin-top: 300px; font-size: 13px">
-                                <div class="card py-2" style="width: 13rem;">
-                                    <p class="card-text fw-bold text-dark">Faisal Maulana Akbar</p>
-                                    <hr width="70" style="margin: auto; ">
-                                    <p class="card-text mt-1 text-muted">Frontend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="px-4">
                     <div class="card"
                         style="background-image: url('{{ asset('/assets/baron1.png') }}'); height:340px; width: 300px">
@@ -139,37 +111,6 @@
                                 <div class="card py-2" style="width: 13rem;">
                                     <p class="card-text fw-bold text-dark">Barron Mahardhika Al Fahmi</p>
                                     <hr width="70" style="margin: auto; ">
-                                    <p class="card-text mt-1 text-muted">Frontend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-4" style="margin-bottom: 100px">
-                <div class="px-4 ">
-                    <div class="card"
-                        style="background-image: url('{{ asset('/assets/marcel.png') }}'); height:340px; width: 300px">
-                        <div class="text-center " style="margin:auto">
-                            <div style="margin-top: 300px; font-size: 13px">
-                                <div class="card py-2" style="width: 13rem;">
-                                    <p class="card-text fw-bold text-dark">Marcellinus Calvin Gunawan</p>
-                                    <hr width="70" style="margin: auto; ">
-                                    <p class="card-text mt-1 text-muted">Backend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-4">
-                    <div class="card"
-                        style="background-image: url('{{ asset('/assets/hildan2.png') }}'); height:340px; width: 300px">
-                        <div class="text-center" style="margin:auto">
-                            <div style="margin-top: 300px; font-size: 13px">
-                                <div class="card py-2" style="width: 13rem;">
-                                    <p class="card-text fw-bold text-dark">Hildan Hanjar Utama</p>
-                                    <hr width="70" style="margin: auto; ">
-                                    <p class="card-text mt-1 text-muted">Backend Developer</p>
                                 </div>
                             </div>
                         </div>
