@@ -158,6 +158,20 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <div class=" form-floating px-1 py-1">
+                                            <input type="email"
+                                                class="form-control rounded-top @error('email') is-invalid @enderror"
+                                                name="email" id="email" placeholder="Email" required
+                                                value="{{ old('email') }}">
+                                            <label for="email">Email</label>
+                                            @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </td>
+                                    <td>
                                         <div class="form-floating px-1 py-1">
                                             <input type="password"
                                                 class="form-control rounded-top @error('password_confirmation') is-invalid @enderror"
@@ -166,20 +180,6 @@
                                                 value="{{ old('password_confirmation') }}">
                                             <label for="name">Konfirmasi password</label>
                                             @error('name')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class=" form-floating px-1 py-1">
-                                            <input type="email"
-                                                class="form-control rounded-top @error('email') is-invalid @enderror"
-                                                name="email" id="email" placeholder="Email" required
-                                                value="{{ old('email') }}">
-                                            <label for="email">Email</label>
-                                            @error('email')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
