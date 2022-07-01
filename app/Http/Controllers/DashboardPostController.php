@@ -171,9 +171,22 @@ class DashboardPostController extends Controller
 
     public function email()
     {
-        $emails = Email::where('to_email', auth()->user()->email)
-            ->where('status', 'pending')->get();
-        return view('dashboard.posts.email', compact('emails'));
+        $emails = Email::where('to_email', auth()->user()->email)->where('status', 'pending')
+                    ->get();
+        // dd($emails);
+        if ($emails->count() > 0) {
+            $products = ProdukUmkm::where('id', '=', $emails[0]['id_product'])->get();
+
+            // dd($products);
+            return view('dashboard.posts.email', [
+                'emails' => $emails,
+                'products' => $products
+            ]);
+        } else {
+            return view('dashboard.posts.email', [
+                'emails' => $emails,
+            ]);
+        }
     }
 
     public function history()

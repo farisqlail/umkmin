@@ -106,7 +106,7 @@
                                     value="" required>
                             </div>
                             <div>
-                                <label for="photo_name" class="form-label">Gambar Produk</label>
+                                <label for="photo_name" class="form-label">Gambar Profile</label>
                                 <img class="img-preview img-fluid mb-3 col-sm-5">
                                 <input class="form-control @error('photo_name') is-invalid @enderror" type="file"
                                     id="photo_name" name="photo_name" onchange="previewImage()">

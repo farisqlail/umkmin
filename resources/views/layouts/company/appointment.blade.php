@@ -43,9 +43,11 @@ Swal.fire({
                         <div class="row">
                             <form action="/sendemail">
                                 @csrf
-                                <input type="text" name="id_product" id="id_product" value="{{ $products[0]['id'] }}" hidden>
-                                <input type="text" name="id_user" id="id_user" value="{{ $products[0]['user_id'] }}" hidden>
-                                <input type="text" name="to_email" id="to_email" value="{{ $products[0]['email'] }}" hidden>
+                                @foreach($products as $item)
+                                    <input type="text" name="id_product" id="id_product" value="{{ $item->id }}" hidden>
+                                    <input type="text" name="id_user" id="id_user" value="{{ $item->user_id }}" hidden>
+                                    <input type="text" name="to_email" id="to_email" value="{{ $item->email }}" hidden>
+                                @endforeach
                                 @if (auth()->user())
                                 <input type="text" name="from_email" id="from_email" value="{{ auth()->user()->email }}" hidden>
                                 @else

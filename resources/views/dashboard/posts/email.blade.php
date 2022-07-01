@@ -1,43 +1,3 @@
-{{-- @extends('dashboard.layouts.main')
-
-@section('container')
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Email yang Masuk, {{ auth()->user()->name }}</h1>
-  </div>
-
-  @if (session()->has('success'))
-  <div class="alert alert-success col-lg-8" role="alert">
-    {{ session('success') }}
-  </div>
-  @endif
-
-  <div class="table-responsive col-lg-8">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Dari</th>
-          <th scope="col">Mengenai</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($emails as $mail)
-        <tr>
-          <td>{{ $loop->iteration }}</td>
-          <td>{{ $mail->from_email }}</td>
-          <td>{{ $mail->subject }}</td>
-          <td>
-                <a href="/dashboard/mailA/{{ $mail->id }}" class="badge bg-success"><span data-feather="check"></span></a>
-                <a href="/dashboard/mailR/{{ $mail->id }}" class="badge bg-danger"><span data-feather="x-circle"></span></a>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
-@endsection --}}
-
 @extends('dashboard.layouts.main')
 
 @section('container')
@@ -59,6 +19,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Email Dari</th>
+                            <th scope="col">Product</th>
                             <th scope="col">Tanggal</th>
                             <th scope="col">Mulai Pukul</th>
                             <th scope="col">Selesai Pukul</th>
@@ -68,7 +29,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($emails->count())
+                        @if (!empty($emails))
                             @foreach ($emails as $mail)
                                 <div class="modal fade" id="exampleModalUpdate{{ $mail->id }}" tabindex="-1" aria-labelledby="judulModal"
                                     aria-hidden="true">
@@ -80,9 +41,9 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="/dashboard/mailR/{{ $mail->id }}" method="get"
+                                                <form action="{{ url('/dashboard/mailR', $mail->id) }}" method="post"
                                                     enctype="multipart/form-data">
-                                                    {{-- @method('put') --}}
+                                                    {{ method_field('PATCH') }}
                                                     @csrf
                                                     <input type="text" class="form-control" id="id" name="id"
                                                         value="" hidden>
@@ -90,8 +51,6 @@
                                                         <div class="mb-3">
                                                             <label for="category_name2" class="col-form-label">Tulis
                                                                 alasan</label>
-                                                            {{-- <input type="text" class="form-control" id="rereasonjected" name="rejected"
-                          value="" required> --}}
                                                             <textarea class="form-control" placeholder="*karena ada acara ..." id="reason" name="reason" style="height: 100px"></textarea>
                                                         </div>
                                                     </div>
@@ -108,6 +67,9 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $mail->from_email }}</td>
+                                    <!-- @foreach($products as $data) -->
+                                    <td>{{ $products[0]['prod_title'] }}</td>
+                                    <!-- @endforeach -->
                                     <td>{{ $mail->date }}</td>
                                     <td>{{ $mail->time1 }}</td>
                                     <td>{{ $mail->time2 }}</td>
@@ -119,8 +81,7 @@
                                         <a href="" class="badge bg-danger rejected" id="modalRejectedMail"
                                             data-bs-toggle="modal" data-id="{{ $mail->id }}"
                                             data-bs-target="#exampleModalUpdate{{ $mail->id }}"><span data-feather="x-circle"></span></a>
-                                        {{-- <a href="/dashboard/mailR/{{ $mail->id }}" class="badge bg-danger"><span
-                                                data-feather="x-circle"></span></a> --}}
+                                       
                                     </td>
                                 </tr>
                             @endforeach
