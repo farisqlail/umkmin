@@ -93,7 +93,9 @@
                         <img src="http://source.unsplash.com/300x200?company" class="card-img-top" alt="..."  width="300" height="200">
                         @endif
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-dark hurufbesar">{{ $umkm->name }}</h5>
+                            <a href="/profile/{{ $umkm->name }}" style="text-decoration:none;">
+                                <h5 class="card-title fw-bold text-dark hurufbesar">{{ $umkm->name }}</h5>
+                            </a>
                             <p class="card-text fw-light text-dark hurufkecil">{{ $umkm->address }}</p>
                         </div>
                     </div>

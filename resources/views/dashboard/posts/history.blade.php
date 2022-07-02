@@ -41,10 +41,10 @@
                             @foreach ($dataAppoiments as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $company[0]['website'] }}</td>
-                                    <td>{{ $item->prod_title }}</td>
-                                    <td>{{ $item->subject }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->product_name }}</td>
+                                    <td>{{ $item->subject }}</td>
+                                    <td>{{ $item->name_pembeli }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->time1 }} - {{ $item->time2 }}</td>
                                 </tr>

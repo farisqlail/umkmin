@@ -13,8 +13,8 @@ class Email extends Model
     protected $fillable = 
     [
         'id_user',	
-        'id_product',
-        'name', 
+        'product_name',
+        'name_pembeli', 
         'phone', 
         'email', 
         'date', 
@@ -26,4 +26,12 @@ class Email extends Model
         'from_email', 
         'status'
     ];
+
+    public function product(){
+        return $this->belongsTo(ProdukUmkm::class, 'id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id');
+    }
 }

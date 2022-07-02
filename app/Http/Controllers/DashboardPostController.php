@@ -171,28 +171,33 @@ class DashboardPostController extends Controller
 
     public function email()
     {
-        $emails = Email::where('to_email', auth()->user()->email)
-            ->where('status', 'pending')->get();
-        return view('dashboard.posts.email', compact('emails'));
+        $emails = Email::where('to_email', auth()->user()->email)->where('status', 'pending')
+                    ->get();
+        // dd($emails);
+        if ($emails->count() > 0) {
+            $products = ProdukUmkm::where('id', '=', $emails[0]['id_product'])->get();
+
+            // dd($products);
+            return view('dashboard.posts.email', [
+                'emails' => $emails,
+                'products' => $products
+            ]);
+        } else {
+            return view('dashboard.posts.email', [
+                'emails' => $emails,
+            ]);
+        }
     }
 
     public function history()
     {
-        $dataAppoiments = Email::join('umkm_products', 'umkm_products.id', '=', 'email_message.id_product')
-            ->get();
-
-        if ($dataAppoiments->count() > 0) {
-            $company = User::where('id', '=', $dataAppoiments[0]['id_user'])->get();
-
-            return view('dashboard.posts.history', [
-                'dataAppoiments' => $dataAppoiments,
-                'company' => $company
-            ]);
-        } else {
+        $dataAppoiments = Email::join('users', 'users.id', 'email_message.id_user')  
+                                ->with('product')
+                                ->get();
+        // dd($dataAppoiments);
             return view('dashboard.posts.history', [
                 'dataAppoiments' => $dataAppoiments,
             ]);
-        }
     }
 
     public function user($id)

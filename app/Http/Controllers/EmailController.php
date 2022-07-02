@@ -15,8 +15,8 @@ class EmailController extends Controller
     {
         $email_desc = [
             'id_user' => $request->id_user,
-            'id_product' => $request->id_product,
-            'name' => $request->name,
+            'product_name' => $request->product_name,
+            'name_pembeli' => $request->name_pembeli,
             'phone' => $request->phone,
             'email' => $request->email,
             'date' => $request->date,
@@ -54,12 +54,12 @@ class EmailController extends Controller
 
     public function updateEmailRejected(Request $request, $id)
     {
+        // dd($request);
         $email = Email::findOrFail($id);
 
         $rejected_reason = $request->reason;
         $rejected['status'] = 'rejected';
         Email::where('id', $id)->update($rejected);
-        // dd($rejected_reason);
         Mail::to($email->from_email)->send(new RejectedMail($rejected_reason));
 
         return redirect('/dashboard/email')->with('danger', 'Email Rejected');

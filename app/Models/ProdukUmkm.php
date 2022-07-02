@@ -67,4 +67,8 @@ class ProdukUmkm extends Model
             ]
         ];
     }
+
+    public function email(){
+        return $this->hasMany(Email::class);
+    }
 }

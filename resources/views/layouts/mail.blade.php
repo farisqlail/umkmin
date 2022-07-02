@@ -1,7 +1,7 @@
 <table>
     <tr>
         <td colspan="3">Nama</td>
-        <td>   &nbsp;&nbsp;:&nbsp;&nbsp; {{ $email_desc['name'] }}</td>
+        <td>   &nbsp;&nbsp;:&nbsp;&nbsp; {{ $email_desc['name_pembeli'] }}</td>
     </tr>
     <tr>
         <td colspan="3">Telp</td>
