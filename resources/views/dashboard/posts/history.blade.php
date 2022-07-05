@@ -23,11 +23,14 @@
                     <div class="col-md-6">
                         <h4>Table History</h4>
                     </div>
+                    <div class="col-md-6" align="right">
+                        <a href="{{ url('/manajemen/history/cetak') }}" class="btn btn-danger">Export History</a>
+                    </div>
                 </div>
                 <table class="table" id="tableKategori">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No</th>
                             <th scope="col">Perusahaan</th>
                             <th scope="col">Produk</th>
                             <th scope="col">Subject</th>

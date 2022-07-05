@@ -138,10 +138,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'isAdmin']], function
     Route::post('/manajemen/new_category', [AdminAuthController::class, 'storeCategory']);
     Route::put('/ubahCategories', [AdminAuthController::class, 'update']);
     Route::get('/manajemen/categories/show/{id}', [AdminAuthController::class, 'show']);
+    Route::get('/manajemen/history/cetak', [DashboardPostController::class, 'cetak']);
 
     Route::get('/manajemen/users', [UserController::class, 'index']);
     Route::put('/manajemen/users/status', [UserController::class, 'update']);
     Route::get('/manajemen/history', [DashboardPostController::class, 'history']);
+    
+
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'isUser']], function () {

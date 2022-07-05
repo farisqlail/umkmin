@@ -67,9 +67,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $mail->from_email }}</td>
-                                    <!-- @foreach($products as $data) -->
-                                    <td>{{ $products[0]['prod_title'] }}</td>
-                                    <!-- @endforeach -->
+                                    <td>{{ $mail->product_name }}</td>
                                     <td>{{ $mail->date }}</td>
                                     <td>{{ $mail->time1 }}</td>
                                     <td>{{ $mail->time2 }}</td>

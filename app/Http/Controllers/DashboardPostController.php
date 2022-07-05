@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class DashboardPostController extends Controller
 {
@@ -172,7 +173,7 @@ class DashboardPostController extends Controller
     public function email()
     {
         $emails = Email::where('to_email', auth()->user()->email)->where('status', 'pending')
-                    ->get();
+            ->get();
         // dd($emails);
         if ($emails->count() > 0) {
             $products = ProdukUmkm::where('id', '=', $emails[0]['id_product'])->get();
@@ -191,13 +192,26 @@ class DashboardPostController extends Controller
 
     public function history()
     {
-        $dataAppoiments = Email::join('users', 'users.id', 'email_message.id_user')  
-                                ->with('product')
-                                ->get();
+        $dataAppoiments = Email::join('users', 'users.id', 'email_message.id_user')
+            ->with('product')
+            ->get();
         // dd($dataAppoiments);
-            return view('dashboard.posts.history', [
-                'dataAppoiments' => $dataAppoiments,
-            ]);
+        return view('dashboard.posts.history', [
+            'dataAppoiments' => $dataAppoiments,
+        ]);
+    }
+
+    public function cetak()
+    {
+        $dataAppoiments = Email::join('users', 'users.id', 'email_message.id_user')
+            ->with('product')
+            ->get();
+
+        $pdf = PDF::loadView('dashboard.posts.pdf', [
+            'dataAppoiments' => $dataAppoiments,
+        ]);
+
+        return $pdf->download('History-Appoiments.pdf');
     }
 
     public function user($id)
