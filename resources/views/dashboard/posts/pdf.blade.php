@@ -14,7 +14,7 @@
 
 <body>
 
-    <h1 align="center">Laporan History Appoiments</h1>
+    <h1 align="center">Laporan History Appointmegnts</h1>
 
     <div class="table-responsive">
         <table class="table" id="tableKategori">
